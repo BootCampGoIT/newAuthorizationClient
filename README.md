@@ -21,38 +21,47 @@
   - `yup`
   - `react-switch`
   - `react-loader-spinner`
+  - `react-avatar-editor`
+  - `react-datepicker`
   - `styled-components`
   - `react-responsive`
-- организация базовой файловой структуры проекта (commit: `"project file structure created"`)
+  - `react-transition-group`
+  - `moment`
+- организация базовой файловой структуры проекта:
 
-  - каталоги/файлы:
+  - каталоги / `файлы`:
     - Components / `App.js`
-      - auth / `Auth.js`
+      - auth / `AuthForm.js`,
+        - validation/ `Validator.js`
       - header / `Header.js`
       - main / `Main.js`
-    - pages / `HomePage.js`, `AuthPage.js`
+      - loader / `Loader.js`
+      - routes / `PrivateRoutes.js`, `PublicRoutes.js`
+    - pages / `HomePage.js`, `AuthPage.js`, `ProfilePage.js`
     - redux / `store.js`, `rootReducer.js`
       - auth / `authActions.js`, `AuthOperations.js`, `authReducers.js`, `AuthSelectors.js`
+      - user / `userActions.js`, `userOperations.js`, `userReducers.js`, `userSelectors.js`
     - routes / `mainRoutes.js`
     - styles / `globalStyles.js`
-    - themes / `index.js`, `dark.js`, `light.js`
-    - .env
+    - `.env`
 
 ## Настройки проекта с использованием библиотеки контроля состояния компонентов пользовательского интерфейса
 
-- конфигурирование `Store` при помощи библиотеки `@reduxjs/toolkit`
+- конфигурирование `Store` при помощи библиотеки `@reduxjs/toolkit` (файл `store.js`)
 - подключение библиотеки `redux-persist`
 - настройка дефолтного `middleware`
-- создание корневого редьюсера-заглушки (файл `rootReducer.js`)
+- создание корневого редьюсера (файл `rootReducer.js`)
 - подключение redux в проект при помощи библиотеки `react-redux` (файл `index.js`)
 
 ## Создание и настройка базовых стилей проекта
-
-- создание конфигурации стилей проекта в цветовых схемах (файлы `light.js, dark.js`)
+- создание конфигурации стилей проекта в цветовых схемах (themes / `light.js, dark.js`)
+- создание объекта стилей с цветовыми схемами (themes / `index.js`)
 - создание глобальных стилей проекта (только в рамках текущего проекта, без использования `modern-normalize`)
 - создание кастомного хука переключения темы проекта (файл `usePersistedTheme.js`)
-- подключение и использование посредством передачи контекста кастомного хука переключения темы `usePersistedTheme`
-
+- подключение и использование посредством передачи контекста кастомного хука переключения темы `usePersistedTheme`.
+- подключение компонента `ThemeProvider` из библиотеки `styled-components`. Передача цветовых схем в файлы со стилями, реализованых посредством использования библиотеки `styled-components`, осуществлется путем использования контекста (файл `App.js`)
+- создание дефолтных стилей проекта посредством использования функции  `createGlobalStyle` из библиотеки `styled-components` (файл `globalStyles.js`)
+- 
 ## Создание навигации проекта
 
 - подключение библиотеки `react-router-dom` (файл `index.js`)
@@ -63,4 +72,3 @@
 - создание и настройка стилизованых компонетов пользовательского интерфейса (файлы `HeaderStyled.js`, `NavigationStyled.js`);
 
 ## `Backend`
-
